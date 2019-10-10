@@ -8,10 +8,10 @@ const StyledSection = styled.section`
   margin: 2rem;
 `;
 
-const Section = ({ section }) => (
-  <StyledSection id={section.id}>
+const Section = React.forwardRef(({ section }, ref) => (
+  <StyledSection ref={ref}>
     <SectionHeading>Section {section.id.toUpperCase()}</SectionHeading>
   </StyledSection>
-);
+));
 
 export { Section };

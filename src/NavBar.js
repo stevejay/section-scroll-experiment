@@ -1,17 +1,10 @@
 import React from "react";
 import { Button } from "./Button";
 
-const NavBar = ({ sections }) => (
+const NavBar = ({ sections, onButtonClick }) => (
   <nav>
     {sections.map(section => (
-      <Button
-        key={section.id}
-        onClick={() => {
-          document
-            .getElementById(section.id)
-            .scrollIntoView({ behavior: "smooth" });
-        }}
-      >
+      <Button key={section.id} onClick={() => onButtonClick(section.id)}>
         Section {section.id.toUpperCase()}
       </Button>
     ))}
