@@ -8,6 +8,10 @@ import { NavBar } from "./NavBar";
 const sections = [{ id: "a" }, { id: "b" }, { id: "c" }, { id: "d" }];
 
 function App() {
+  const handleButtonClick = sectionId => {
+    document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <React.StrictMode>
       <div className="App">
@@ -15,7 +19,7 @@ function App() {
           <img src={logo} className="App-logo" alt="logo" />
         </header>
         <Main>
-          <NavBar sections={sections} />
+          <NavBar sections={sections} onButtonClick={handleButtonClick} />
           {sections.map(section => (
             <Section key={section.id} section={section} />
           ))}
