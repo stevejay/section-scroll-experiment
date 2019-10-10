@@ -8,9 +8,9 @@ const StyledSection = styled.section`
   margin: 2rem;
 `;
 
-const Section = ({ id }) => (
-  <StyledSection>
-    <SectionHeading>Section {id.toUpperCase()}</SectionHeading>
+const Section = ({ section }) => (
+  <StyledSection id={section.id}>
+    <SectionHeading>Section {section.id.toUpperCase()}</SectionHeading>
   </StyledSection>
 );
 

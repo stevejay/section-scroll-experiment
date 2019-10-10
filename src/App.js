@@ -17,7 +17,7 @@ function App() {
         <Main>
           <NavBar sections={sections} />
           {sections.map(section => (
-            <Section key={section.id} id={section.id} />
+            <Section key={section.id} section={section} />
           ))}
         </Main>
       </div>
