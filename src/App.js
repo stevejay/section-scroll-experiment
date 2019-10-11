@@ -9,7 +9,7 @@ import UsingMessageExample from "./UsingMessageExample";
 import UsingRefsExample from "./UsingRefsExample";
 
 const App = () => {
-  const [sections, setSections] = React.useState(fetchSections());
+  const [sections, setSections] = React.useState(() => fetchSections());
 
   return (
     <React.StrictMode>

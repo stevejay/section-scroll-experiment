@@ -1,13 +1,13 @@
 import React from "react";
 import { Box } from "grommet";
-import { scrollToElement, useRefsMap } from "../utils";
+import { useRefsMap } from "../utils";
 import Section from "./Section";
 import Navigation from "./Navigation";
 
 const UsingRefsExample = ({ sections }) => {
   const refsMap = useRefsMap(sections);
 
-  const handleNavClick = id => scrollToElement(refsMap[id].current);
+  const handleNavClick = id => refsMap[id].current.scrollToElement();
 
   return (
     <Box gap="medium">

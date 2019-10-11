@@ -5,7 +5,6 @@ import Navigation from "./Navigation";
 
 const UsingMessageExample = ({ sections }) => {
   const [message, setMessage] = React.useState(null);
-  React.useEffect(() => setMessage(null), [sections]);
 
   const handleNavClick = id => setMessage({ id });
 
@@ -14,7 +13,7 @@ const UsingMessageExample = ({ sections }) => {
       <Navigation sections={sections} onNavClick={handleNavClick} />
       <Box gap="large">
         {sections.map(section => (
-          <Section key={section.id} section={section} message={message} />
+          <Section key={section.id} section={section} scrollMessage={message} />
         ))}
       </Box>
     </Box>
