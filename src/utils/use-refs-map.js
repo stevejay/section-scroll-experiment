@@ -1,13 +1,13 @@
 import React from "react";
 
-const useRefsMap = (sections, idProp) => {
+const useRefsMap = (sections, idKey = "id") => {
   const refsMap = React.useMemo(
     () =>
       sections.reduce((acc, section) => {
-        acc[section[idProp]] = React.createRef();
+        acc[section[idKey]] = React.createRef();
         return acc;
       }, {}),
-    [sections, idProp]
+    [sections, idKey]
   );
 
   return refsMap;
