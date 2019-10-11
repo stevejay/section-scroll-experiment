@@ -5,8 +5,18 @@ import PageHeader from "./PageHeader";
 import theme from "./theme";
 import GlobalStyle from "./GlobalStyle";
 import UsingIDsExample from "./UsingIDsExample";
+import UsingCountersExample from "./UsingCountersExample";
 import UsingMessageExample from "./UsingMessageExample";
 import UsingRefsExample from "./UsingRefsExample";
+import UsingStateExample from "./UsingStateExample";
+
+const EXAMPLES = [
+  { title: "Using IDs", component: UsingIDsExample },
+  { title: "Using Counters", component: UsingCountersExample },
+  { title: "Using State", component: UsingStateExample },
+  { title: "Using Refs", component: UsingRefsExample },
+  { title: "Using Messages", component: UsingMessageExample }
+];
 
 const App = () => {
   const [sections, setSections] = React.useState(() => fetchSections());
@@ -18,15 +28,11 @@ const App = () => {
         <PageHeader onChangeSections={() => setSections(fetchSections())} />
         <Box as="main" pad="medium">
           <Tabs>
-            <Tab title="Using IDs">
-              <UsingIDsExample sections={sections} />
-            </Tab>
-            <Tab title="Using Refs">
-              <UsingRefsExample sections={sections} />
-            </Tab>
-            <Tab title="Using Messages">
-              <UsingMessageExample sections={sections} />
-            </Tab>
+            {EXAMPLES.map(({ title, component: Component }) => (
+              <Tab key={title} title={title}>
+                <Component sections={sections} />
+              </Tab>
+            ))}
           </Tabs>
         </Box>
       </Grommet>
