@@ -1,17 +1,17 @@
 import React from "react";
 import styled from "styled-components/macro";
-import { SectionHeading } from "./SectionHeading";
+import SectionHeading from "./SectionHeading";
+import createSectionLabel from "./create-section-label";
 
 const StyledSection = styled.section`
   background-color: papayawhip;
-  height: 30rem;
-  margin: 2rem;
+  min-height: 80vh;
 `;
 
 const Section = React.forwardRef(({ section }, ref) => (
   <StyledSection ref={ref}>
-    <SectionHeading>Section {section.id.toUpperCase()}</SectionHeading>
+    <SectionHeading>{createSectionLabel(section.id)}</SectionHeading>
   </StyledSection>
 ));
 
-export { Section };
+export default Section;

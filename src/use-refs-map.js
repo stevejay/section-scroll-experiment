@@ -13,4 +13,4 @@ const useRefsMap = (sections, idProp) => {
   return refsMap;
 };
 
-export { useRefsMap };
+export default useRefsMap;

@@ -1,35 +1,43 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import { Main } from "./Main";
-import { Section } from "./Section";
-import { NavBar } from "./NavBar";
-import { Button } from "./Button";
-import { useForceUpdate } from "./use-force-update";
-import { useRefsMap } from "./use-refs-map";
-import { fetchSections } from "./fetch-sections";
+import Main from "./Main";
+import Section from "./Section";
+import SectionNavigation from "./SectionNavigation";
+// import { Button } from "./Button";
+// import { useForceUpdate } from "./use-force-update";
+import useRefsMap from "./use-refs-map";
+import fetchSections from "./fetch-sections";
+import GlobalStyle from "./GlobalStyle";
+import Header from "./Header";
+import PageHeading from "./PageHeading";
 
 const App = () => {
+  // eslint-disable-next-line
   const [sections, setSections] = React.useState(fetchSections());
   const refsMap = useRefsMap(sections, "id");
-  const forceUpdate = useForceUpdate();
+  //   const forceUpdate = useForceUpdate();
 
   const handleButtonClick = id => {
-    refsMap[id].current.scrollIntoView({ behavior: "smooth" });
+    // refsMap[id].current.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    window.scrollTo(0, refsMap[id].current.offsetTop);
   };
 
   return (
     <React.StrictMode>
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <Button onClick={() => setSections(fetchSections())}>
+      <GlobalStyle />
+      <div>
+        <Header>
+          <PageHeading>Section Scrolling Example</PageHeading>
+        </Header>
+        {/* <Button onClick={() => setSections(fetchSections())}>
             Change sections
           </Button>
-          <Button onClick={forceUpdate}>Force a re-render</Button>
-        </header>
+          <Button onClick={forceUpdate}>Force a re-render</Button> */}
         <Main>
-          <NavBar sections={sections} onButtonClick={handleButtonClick} />
+          <SectionNavigation
+            sections={sections}
+            onButtonClick={handleButtonClick}
+          />
           {sections.map(section => (
             <Section
               ref={refsMap[section.id]}

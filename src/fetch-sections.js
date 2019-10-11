@@ -3,4 +3,4 @@ const fetchSections = () => {
   return [0, 1, 2, 3].map(index => ({ id: `${firstIndex + index}` }));
 };
 
-export { fetchSections };
+export default fetchSections;

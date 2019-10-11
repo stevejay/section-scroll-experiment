@@ -5,4 +5,4 @@ const SectionHeading = styled.h2`
   padding: 0.5rem;
 `;
 
-export { SectionHeading };
+export default SectionHeading;

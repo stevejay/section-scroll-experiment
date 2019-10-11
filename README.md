@@ -8,6 +8,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 - [Using the styled-components Babel plugin with Create React App](https://sheelahb.com/blog/styled-components-with-create-react-app/)
 
+### Parent to Child Communication in React
+
+- https://github.com/facebook/react/issues/6646
+
 ## Available Scripts
 
 In the project directory, you can run:

@@ -8,4 +8,4 @@ const useForceUpdate = () => {
   return () => set(value => !value); // toggle the state to force render
 };
 
-export { useForceUpdate };
+export default useForceUpdate;
