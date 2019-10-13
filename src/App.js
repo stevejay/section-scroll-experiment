@@ -12,8 +12,8 @@ import UsingStateExample from "./UsingStateExample";
 
 const EXAMPLES = [
   { title: "Using IDs", component: UsingIDsExample },
-  { title: "Using Counters", component: UsingCountersExample },
   { title: "Using State", component: UsingStateExample },
+  { title: "Using Counters", component: UsingCountersExample },
   { title: "Using Refs", component: UsingRefsExample },
   { title: "Using Messages", component: UsingMessageExample }
 ];

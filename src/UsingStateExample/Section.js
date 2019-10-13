@@ -6,11 +6,12 @@ const Section = ({ section, scrollSectionId, onSectionScrolled }) => {
   const ref = React.useRef();
 
   React.useEffect(() => {
-    if (scrollSectionId !== null && scrollSectionId === section.id) {
+    if (scrollSectionId && scrollSectionId === section.id) {
       scrollToElement(ref.current);
       onSectionScrolled();
     }
-  }, [section, scrollSectionId, onSectionScrolled]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [scrollSectionId, onSectionScrolled]);
 
   return <Card ref={ref} label={createSectionLabel(section)} />;
 };

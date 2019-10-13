@@ -11,7 +11,7 @@ const PageHeader = ({ onChangeSections }) => (
     justify="between"
   >
     <Heading color="dark-1" size="small" margin="small">
-      Imperative React.js
+      Imperative Updates in React
     </Heading>
     <Button
       icon={<Icons.Refresh />}

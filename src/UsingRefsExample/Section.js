@@ -6,7 +6,7 @@ const Section = React.forwardRef(({ section }, ref) => {
   const cardRef = React.useRef();
 
   React.useImperativeHandle(ref, () => ({
-    scrollToElement: () => {
+    scroll: () => {
       scrollToElement(cardRef.current);
     }
   }));

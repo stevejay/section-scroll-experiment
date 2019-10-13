@@ -6,6 +6,8 @@ import Navigation from "./Navigation";
 const UsingMessageExample = ({ sections }) => {
   const [message, setMessage] = React.useState(null);
 
+  React.useEffect(() => setMessage(null), [sections]);
+
   const handleNavClick = id => setMessage({ id });
 
   return (

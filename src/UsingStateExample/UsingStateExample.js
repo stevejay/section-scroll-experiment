@@ -8,7 +8,7 @@ const UsingStateExample = ({ sections }) => {
 
   const handleSectionScrolled = React.useCallback(
     () => setScrollSectionId(null),
-    [setScrollSectionId]
+    []
   );
 
   return (
