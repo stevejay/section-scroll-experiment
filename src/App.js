@@ -6,7 +6,7 @@ import theme from "./theme";
 import GlobalStyle from "./GlobalStyle";
 import UsingIDsExample from "./UsingIDsExample";
 import UsingCountersExample from "./UsingCountersExample";
-import UsingMessageExample from "./UsingMessageExample";
+import UsingStateObjectExample from "./UsingStateObjectExample";
 import UsingRefsExample from "./UsingRefsExample";
 import UsingStateExample from "./UsingStateExample";
 
@@ -14,8 +14,8 @@ const EXAMPLES = [
   { title: "Using IDs", component: UsingIDsExample },
   { title: "Using State", component: UsingStateExample },
   { title: "Using Counters", component: UsingCountersExample },
-  { title: "Using Refs", component: UsingRefsExample },
-  { title: "Using Messages", component: UsingMessageExample }
+  { title: "Using a State Object", component: UsingStateObjectExample },
+  { title: "Using Refs", component: UsingRefsExample }
 ];
 
 const App = () => {

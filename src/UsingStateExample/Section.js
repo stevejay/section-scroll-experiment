@@ -10,8 +10,7 @@ const Section = ({ section, scrollSectionId, onSectionScrolled }) => {
       scrollToElement(ref.current);
       onSectionScrolled();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [scrollSectionId, onSectionScrolled]);
+  }, [section.id, scrollSectionId, onSectionScrolled]);
 
   return <Card ref={ref} label={createSectionLabel(section)} />;
 };
