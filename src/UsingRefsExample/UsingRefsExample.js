@@ -4,10 +4,6 @@ import Section from "./Section";
 import Navigation from "./Navigation";
 
 const UsingRefsExample = ({ sections }) => {
-  // The useMemo usage here is fine because the code
-  // still works if the refsMap is recreated every time
-  // the component is invoked.
-
   const refsMap = React.useMemo(
     () =>
       sections.reduce((acc, section) => {
